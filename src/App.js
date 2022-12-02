@@ -6,17 +6,21 @@ import ChatBox from './Chatbox';
 function App() {
 
   const [addUser, setAddUser] = useState(false);
+  const [allUsers, setAllUsers] = useState(null)
+  const [seeUsers, setSeeUsers] = useState(false)
 
   useEffect(() => {
     fetch("http://localhost:8080/user/all")
     .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(data => setAllUsers(data))
   }, [])
 
   return (
     <div className="App">
       <p><Header/></p>
-      <ChatBox />
+      <button onClick={() => setSeeUsers((seeUsers) => !seeUsers)}>See Users</button>
+      {seeUsers ? <ChatBox allUsers={allUsers}/> : null}
+      
       <p>
         <SignUp />
       </p>

@@ -1,7 +1,11 @@
-function ChatBox() {
+function ChatBox({allUsers}) {
     return (
         <div>
-            this will be a chatbox
+            {allUsers.map((user) => {
+            return (
+                <div>{user.userName}</div>
+                )
+            })}
         </div>
     )
 }
