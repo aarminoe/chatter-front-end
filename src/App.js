@@ -3,6 +3,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 import SignUp from './SignUp';
 import ChatBox from './Chatbox';
+import Message from './Message';
 function App() {
 
   const [addUser, setAddUser] = useState(false);
@@ -24,6 +25,9 @@ function App() {
       <p>
         <SignUp />
       </p>
+      <div>
+        <Message />
+      </div>
     </div>
   );
 }
