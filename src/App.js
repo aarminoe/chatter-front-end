@@ -33,7 +33,7 @@ function App() {
         <SignUp />
       </p>
       <div>
-        <Message />
+        <Message messages={messages}/>
       </div>
     </div>
   );

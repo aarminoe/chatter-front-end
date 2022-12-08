@@ -1,7 +1,11 @@
-function Message() {
+function Message({messages}) {
     return(
         <div>
-            Here are all the mssages!
+            {messages.map((message) => {
+                return (<div>
+                    {message.messageText}
+                    </div>)
+            })}
         </div>
     )
 }
